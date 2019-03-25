@@ -19,6 +19,9 @@ namespace ZedKit {
 namespace HTTPHeaders {
 extern const char AcceptEncoding[];
 extern const char AcceptLanguage[];
+extern const char Cookie[];
+extern const char Referer[];
+extern const char UserAgent[];
 } // HTTPHeaders
 
 } // namespace ZedKit
