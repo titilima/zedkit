@@ -9,15 +9,23 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\strings">
       <UniqueIdentifier>{0ffbdc5d-fb07-40e0-802e-8cb667b89f0c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\strings">
       <UniqueIdentifier>{9e888231-3d44-4dd9-87df-dcacedc3fe6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\net">
+      <UniqueIdentifier>{c3640ddc-ea9b-4750-917a-f0255851eb78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\net">
+      <UniqueIdentifier>{4412f557-33b8-4080-9079-b79e8ffdae58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\files">
+      <UniqueIdentifier>{27d2ffb8-989f-4395-8672-b1ac1b7dfe68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\files">
+      <UniqueIdentifier>{113c36ee-2116-4089-a190-dbea075b779a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +40,15 @@
     </ClCompile>
     <ClCompile Include="..\..\src\strings\string_format.cpp">
       <Filter>Source Files\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\net\http_constants.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\files\file.cpp">
+      <Filter>Source Files\files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\files\file_win.cpp">
+      <Filter>Source Files\files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +66,15 @@
     </ClInclude>
     <ClInclude Include="..\..\src\strings\string_printf_impl.hpp">
       <Filter>Source Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\net\zk_http_constants.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\zk_config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\files\zk_file.h">
+      <Filter>Header Files\files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
