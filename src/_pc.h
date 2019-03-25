@@ -15,5 +15,10 @@
 #pragma once
 
 #include <cassert>
+#include <string>
+#include <vector>
+#include <unordered_map>
+
+#include "zk_log.h"
 
 #endif // ZEDKIT__PC_H
