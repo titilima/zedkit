@@ -14,8 +14,13 @@
 
 #pragma once
 
+#include <zk_config.h>
+
 #include <string>
-#include <string_view>
+#ifdef _ZK_STRING_VIEW_SUPPORTED
+#   include <string_view>
+#endif
+
 #ifdef _WIN32
 #   include <Windows.h>
 #endif
@@ -23,11 +28,22 @@
 namespace ZedKit {
 
 #ifdef _WIN32
-std::string ZkWideStringToMultiByte(const std::wstring_view &ws, UINT codePage = CP_ACP);
-std::string ZkWideStringToMultiByte(const std::wstring &ws, UINT codePage = CP_ACP);
-std::wstring ZkMultiByteToWideString(const std::string_view &s, UINT codePage = CP_ACP);
-std::wstring ZkMultiByteToWideString(const std::string &s, UINT codePage = CP_ACP);
-#endif
+
+std::wstring ZkMultiByteToWideString(PCSTR ps, size_t length, UINT codePage = CP_ACP);
+
+template <class StringType>
+inline std::wstring ZkMultiByteToWideString(const StringType &s, UINT codePage = CP_ACP) {
+    return ZkMultiByteToWideString(s.data(), s.length(), codePage);
+}
+
+std::string ZkWideStringToMultiByte(PCWSTR pws, size_t length, UINT codePage = CP_ACP);
+
+template <class StringType>
+inline std::string ZkWideStringToMultiByte(const StringType &s, UINT codePage = CP_ACP) {
+    return ZkWideStringToMultiByte(s.data(), s.length(), codePage);
+}
+
+#endif // _WIN32
 
 } // namespace ZedKit
 
