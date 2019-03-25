@@ -1,3 +1,5 @@
 projects/win/debug32
 projects/win/release32
-sdk/win32
+sdk/win32/*
+!sdk/win32/ZedKit.props
+
