@@ -13,7 +13,23 @@
 
 namespace ZedKit {
 
-std::string ZkWideStringToMultiByte(const std::wstring &ws, UINT codePage)
+std::wstring ZkMultiByteToWideString(const std::string_view &s, UINT codePage)
+{
+    std::wstring ws;
+
+    int n = MultiByteToWideChar(codePage, 0, s.data(), s.length(), nullptr, 0);
+    ws.resize(n, L'\0');
+    MultiByteToWideChar(codePage, 0, s.data(), s.length(), const_cast<PWSTR>(ws.data()), n);
+
+    return ws;
+}
+
+std::wstring ZkMultiByteToWideString(const std::string &s, UINT codePage)
+{
+    return ZkMultiByteToWideString(std::string_view(s.data(), s.length()), codePage);
+}
+
+std::string ZkWideStringToMultiByte(const std::wstring_view &ws, UINT codePage)
 {
     std::string s;
 
@@ -24,15 +40,9 @@ std::string ZkWideStringToMultiByte(const std::wstring &ws, UINT codePage)
     return s;
 }
 
-std::wstring ZkMultiByteToWideString(const std::string &s, UINT codePage)
+std::string ZkWideStringToMultiByte(const std::wstring &ws, UINT codePage)
 {
-    std::wstring ws;
-
-    int n = MultiByteToWideChar(codePage, 0, s.data(), s.length(), nullptr, 0);
-    ws.resize(n, L'\0');
-    MultiByteToWideChar(codePage, 0, s.data(), s.length(), const_cast<PWSTR>(ws.data()), n);
-
-    return ws;
+    return ZkWideStringToMultiByte(std::wstring_view(ws.data(), ws.length()), codePage);
 }
 
 } // namespace ZedKit
