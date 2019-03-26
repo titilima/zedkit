@@ -28,6 +28,7 @@ class ZkStringPiece
 {
 public:
     explicit ZkStringPiece(const CharT *s) : m_data(s), m_length(Length(s)) {}
+    explicit ZkStringPiece(const CharT *s, size_t length) : m_data(s), m_length(length) {}
     ZkStringPiece(const std::basic_string<CharT> &s) : m_data(s.data()), m_length(s.length()) {}
 #ifdef _ZK_STRING_VIEW_SUPPORTED
     ZkStringPiece(const std::basic_string_view<CharT> &s) : m_data(s.data()), m_length(s.length()) {}
@@ -35,6 +36,12 @@ public:
 
     const CharT* Data(void) const { return m_data; }
     size_t Length(void) const { return m_length; }
+
+    std::basic_string<CharT> ToString(void) const { return std::basic_string<CharT>(m_data, m_length); }
+#ifdef _ZK_STRING_VIEW_SUPPORTED
+    std::basic_string_view<CharT> ToStringView(void) const { return std::basic_string_view<CharT>(m_data, m_length); }
+#endif
+
 private:
     static size_t Length(const CharT *s) {
         const CharT *p = s;
