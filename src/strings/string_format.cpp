@@ -11,7 +11,7 @@
 
 #include "strings/zk_string_format.h"
 
-#include "strings/string_printf_impl.hpp"
+#include "strings/printf_impl.hpp"
 
 namespace ZedKit {
 

@@ -1,23 +1,23 @@
 // -------------------------------------------------
 // ZedKit
 // -------------------------------------------------
-//   File Name: string_utils_impl.hpp
-// Description: String Utility Implementations
+//   File Name: toggle_case_impl.hpp
+// Description: Case Toggling Implementations
 //      Author: Ziming Li
 //     Created: 2019-03-26
 // -------------------------------------------------
 // Copyright (C) 2019 MingYang Software Technology.
 // -------------------------------------------------
 
-#ifndef _STRING_UTILS_IMPL_HPP
-#define _STRING_UTILS_IMPL_HPP
+#ifndef _TOGGLE_CASE_IMPL_HPP
+#define _TOGGLE_CASE_IMPL_HPP
 
 #pragma once
 
 namespace ZedKit {
 
 template <typename CharT>
-inline std::basic_string<CharT> StringToASCIILower(const CharT *s)
+std::basic_string<CharT> StringToASCIILower(const CharT *s)
 {
     std::basic_string<CharT> ret;
     while ('\0' != *s)
@@ -32,7 +32,7 @@ inline std::basic_string<CharT> StringToASCIILower(const CharT *s)
 }
 
 template <typename CharT>
-inline std::basic_string<CharT> StringToASCIILower(const CharT *s, size_t length)
+std::basic_string<CharT> StringToASCIILower(const CharT *s, size_t length)
 {
     std::basic_string<CharT> ret;
     for (size_t i = 0; i < length; ++i)
@@ -47,7 +47,7 @@ inline std::basic_string<CharT> StringToASCIILower(const CharT *s, size_t length
 }
 
 template <typename CharT>
-inline std::basic_string<CharT> StringToASCIIUpper(const CharT *s)
+std::basic_string<CharT> StringToASCIIUpper(const CharT *s)
 {
     std::basic_string<CharT> ret;
     while ('\0' != *s)
@@ -62,7 +62,7 @@ inline std::basic_string<CharT> StringToASCIIUpper(const CharT *s)
 }
 
 template <typename CharT>
-inline std::basic_string<CharT> StringToASCIIUpper(const CharT *s, size_t length)
+std::basic_string<CharT> StringToASCIIUpper(const CharT *s, size_t length)
 {
     std::basic_string<CharT> ret;
     for (size_t i = 0; i < length; ++i)
@@ -78,4 +78,4 @@ inline std::basic_string<CharT> StringToASCIIUpper(const CharT *s, size_t length
 
 } // namespace ZedKit
 
-#endif // _STRING_UTILS_IMPL_HPP
+#endif // _TOGGLE_CASE_IMPL_HPP

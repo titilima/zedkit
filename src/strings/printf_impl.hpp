@@ -1,16 +1,16 @@
 // -------------------------------------------------
 // ZedKit
 // -------------------------------------------------
-//   File Name: string_printf_impl.hpp
-// Description: StringPrintF Implementation
+//   File Name: printf_impl.hpp
+// Description: Printf Implementation
 //      Author: Ziming Li
 //     Created: 2019-03-25
 // -------------------------------------------------
 // Copyright (C) 2019 MingYang Software Technology.
 // -------------------------------------------------
 
-#ifndef _STRING_PRINTF_IMPL_HPP
-#define _STRING_PRINTF_IMPL_HPP
+#ifndef _PRINTF_IMPL_HPP
+#define _PRINTF_IMPL_HPP
 
 #pragma once
 
@@ -69,4 +69,4 @@ std::basic_string<CharT> StringPrintfImpl(const CharT *format, va_list args)
 
 } // namespace ZedKit
 
-#endif // _STRING_PRINTF_IMPL_HPP
+#endif // _PRINTF_IMPL_HPP
