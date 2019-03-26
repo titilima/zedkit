@@ -28,7 +28,7 @@ const CharT* Whitespaces(void)
 template <typename CharT>
 ZkStringPiece<CharT> TrimString(const std::basic_string_view<CharT> &s)
 {
-    const CharT *whitespaces = Whitespaces();
+    const CharT *whitespaces = Whitespaces<CharT>();
 
     size_t p = s.find_first_not_of(whitespaces);
     if (std::basic_string_view<CharT>::npos == p)
