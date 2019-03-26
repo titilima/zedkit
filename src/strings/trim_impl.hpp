@@ -19,9 +19,16 @@
 namespace ZedKit {
 
 template <typename CharT>
+const CharT* Whitespaces(void)
+{
+    static const CharT TheWhitespaces[] = { ' ', '\t', '\n', '\r', '\f', '\b', '\0' };
+    return TheWhitespaces;
+}
+
+template <typename CharT>
 ZkStringPiece<CharT> TrimString(const std::basic_string_view<CharT> &s)
 {
-    static const CharT whitespaces[] = { ' ', '\t', '\n', '\r', '\f', '\b', '\0' };
+    const CharT *whitespaces = Whitespaces();
 
     size_t p = s.find_first_not_of(whitespaces);
     if (std::basic_string_view<CharT>::npos == p)
