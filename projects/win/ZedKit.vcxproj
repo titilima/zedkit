@@ -169,6 +169,7 @@
     <ClCompile Include="..\..\src\net\http_constants.cpp" />
     <ClCompile Include="..\..\src\strings\string_conversions_win.cpp" />
     <ClCompile Include="..\..\src\strings\string_format.cpp" />
+    <ClCompile Include="..\..\src\strings\string_split.cpp" />
     <ClCompile Include="..\..\src\strings\string_utils.cpp" />
     <ClCompile Include="_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -182,11 +183,14 @@
     <ClInclude Include="..\..\sdk\include\strings\zk_string_conversions.h" />
     <ClInclude Include="..\..\sdk\include\strings\zk_string_format.h" />
     <ClInclude Include="..\..\sdk\include\strings\zk_string_piece.hpp" />
+    <ClInclude Include="..\..\sdk\include\strings\zk_string_split.h" />
     <ClInclude Include="..\..\sdk\include\strings\zk_string_utils.h" />
     <ClInclude Include="..\..\sdk\include\zk_config.h" />
     <ClInclude Include="..\..\sdk\include\zk_log.h" />
-    <ClInclude Include="..\..\src\strings\string_printf_impl.hpp" />
-    <ClInclude Include="..\..\src\strings\string_utils_impl.hpp" />
+    <ClInclude Include="..\..\src\strings\printf_impl.hpp" />
+    <ClInclude Include="..\..\src\strings\split_impl.hpp" />
+    <ClInclude Include="..\..\src\strings\toggle_case_impl.hpp" />
+    <ClInclude Include="..\..\src\strings\trim_impl.hpp" />
     <ClInclude Include="..\..\src\_pc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

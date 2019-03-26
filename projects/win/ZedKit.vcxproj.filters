@@ -53,6 +53,9 @@
     <ClCompile Include="..\..\src\strings\string_utils.cpp">
       <Filter>Source Files\strings</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\strings\string_split.cpp">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\_pc.h">
@@ -67,9 +70,6 @@
     <ClInclude Include="..\..\sdk\include\strings\zk_string_format.h">
       <Filter>Header Files\strings</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\strings\string_printf_impl.hpp">
-      <Filter>Source Files\strings</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\sdk\include\net\zk_http_constants.h">
       <Filter>Header Files\net</Filter>
     </ClInclude>
@@ -82,11 +82,23 @@
     <ClInclude Include="..\..\sdk\include\strings\zk_string_utils.h">
       <Filter>Header Files\strings</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\strings\string_utils_impl.hpp">
-      <Filter>Source Files\strings</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\sdk\include\strings\zk_string_piece.hpp">
       <Filter>Header Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\strings\zk_string_split.h">
+      <Filter>Header Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\strings\printf_impl.hpp">
+      <Filter>Source Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\strings\split_impl.hpp">
+      <Filter>Source Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\strings\toggle_case_impl.hpp">
+      <Filter>Source Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\strings\trim_impl.hpp">
+      <Filter>Source Files\strings</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
