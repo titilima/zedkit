@@ -25,6 +25,20 @@ std::string ZkStringToASCIILower(const char *s, size_t length)
     return StringToASCIILower(s, length);
 }
 
+#ifndef _ZK_WIDE_IS_UTF16
+
+std::u16string ZkStringToASCIILower(const char16_t *s)
+{
+    return StringToASCIILower(s);
+}
+
+std::u16string ZkStringToASCIILower(const char16_t *s, size_t length)
+{
+    return StringToASCIILower(s, length);
+}
+
+#endif // _ZK_WIDE_IS_UTF16
+
 std::wstring ZkStringToASCIILower(const wchar_t *s)
 {
     return StringToASCIILower(s);
@@ -44,6 +58,20 @@ std::string ZkStringToASCIIUpper(const char *s, size_t length)
 {
     return StringToASCIIUpper(s, length);
 }
+
+#ifndef _ZK_WIDE_IS_UTF16
+
+std::u16string ZkStringToASCIIUpper(const char16_t *s)
+{
+    return ZkStringToASCIIUpper(s);
+}
+
+std::u16string ZkStringToASCIILower(const char16_t *s, size_t length)
+{
+    return ZkStringToASCIIUpper(s, length);
+}
+
+#endif // _ZK_WIDE_IS_UTF16
 
 std::wstring ZkStringToASCIIUpper(const wchar_t *s)
 {

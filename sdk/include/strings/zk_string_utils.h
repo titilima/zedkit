@@ -26,6 +26,10 @@ inline bool ZkStringIsNullOrEmpty(const CharT *s) {
 
 std::string ZkStringToASCIILower(const char *s);
 std::string ZkStringToASCIILower(const char *s, size_t length);
+#ifndef _ZK_WIDE_IS_UTF16
+std::u16string ZkStringToASCIILower(const char16_t *s);
+std::u16string ZkStringToASCIILower(const char16_t *s, size_t length);
+#endif
 std::wstring ZkStringToASCIILower(const wchar_t *s);
 std::wstring ZkStringToASCIILower(const wchar_t *s, size_t length);
 
@@ -36,6 +40,10 @@ inline std::basic_string<CharT> ZkStringToASCIILower(const ZkStringPiece<CharT> 
 
 std::string ZkStringToASCIIUpper(const char *s);
 std::string ZkStringToASCIIUpper(const char *s, size_t length);
+#ifndef _ZK_WIDE_IS_UTF16
+std::u16string ZkStringToASCIIUpper(const char16_t *s);
+std::u16string ZkStringToASCIIUpper(const char16_t *s, size_t length);
+#endif
 std::wstring ZkStringToASCIIUpper(const wchar_t *s);
 std::wstring ZkStringToASCIIUpper(const wchar_t *s, size_t length);
 

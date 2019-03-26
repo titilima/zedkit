@@ -14,6 +14,10 @@
 
 #pragma once
 
+#ifdef _WIN32
+#   define _ZK_WIDE_IS_UTF16
+#endif
+
 #ifdef _MSC_VER
 #   include <yvals_core.h>
 #   if defined(_HAS_CXX17) && _HAS_CXX17
