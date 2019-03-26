@@ -52,6 +52,15 @@ inline std::basic_string<CharT> ZkStringToASCIIUpper(const ZkStringPiece<CharT> 
     return ZkStringToASCIIUpper(s.Data(), s.length());
 }
 
+ZkStringPiece<char> ZkTrimString(const char *s);
+ZkStringPiece<char> ZkTrimString(const char *s, size_t length);
+#ifndef _ZK_WIDE_IS_UTF16
+ZkStringPiece<char16_t> ZkTrimString(const char16_t *s);
+ZkStringPiece<char16_t> ZkTrimString(const char16_t *s, size_t length);
+#endif
+ZkStringPiece<wchar_t> ZkTrimString(const wchar_t *s);
+ZkStringPiece<wchar_t> ZkTrimString(const wchar_t *s, size_t length);
+
 } // namespace ZedKit
 
 #endif // ZEDKIT_STRING_UTILS_H

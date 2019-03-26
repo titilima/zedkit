@@ -11,7 +11,8 @@
 
 #include "strings/zk_string_utils.h"
 
-#include "strings/string_utils_impl.hpp"
+#include "strings/toggle_case_impl.hpp"
+#include "strings/trim_impl.hpp"
 
 namespace ZedKit {
 
@@ -81,6 +82,40 @@ std::wstring ZkStringToASCIIUpper(const wchar_t *s)
 std::wstring ZkStringToASCIIUpper(const wchar_t *s, size_t length)
 {
     return StringToASCIIUpper(s, length);
+}
+
+ZkStringPiece<char> ZkTrimString(const char *s)
+{
+    return TrimString(std::string_view(s));
+}
+
+ZkStringPiece<char> ZkTrimString(const char *s, size_t length)
+{
+    return TrimString(std::string_view(s, length));
+}
+
+#ifndef _ZK_WIDE_IS_UTF16
+
+ZkStringPiece<char16_t> ZkTrimString(const char16_t *s)
+{
+    return TrimString(std::u16string_view(s));
+}
+
+ZkStringPiece<char16_t> ZkTrimString(const char16_t *s, size_t length)
+{
+    return TrimString(std::u16string_view(s, length));
+}
+
+#endif
+
+ZkStringPiece<wchar_t> ZkTrimString(const wchar_t *s)
+{
+    return TrimString(std::wstring_view(s));
+}
+
+ZkStringPiece<wchar_t> ZkTrimString(const wchar_t *s, size_t length)
+{
+    return TrimString(std::wstring_view(s, length));
 }
 
 } // namespace ZedKit
