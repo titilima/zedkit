@@ -243,6 +243,11 @@ std::string ZkURI::GetUsername(void) const
     return ret;
 }
 
+bool ZkURI::HasScheme(void) const
+{
+    return m_parsed->scheme.length > 0;
+}
+
 ZkURI ZkURI::Parse(const char *URI)
 {
     ZkURI ret(URI);

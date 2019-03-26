@@ -26,6 +26,7 @@ public:
 
     static ZkURI Parse(const char *URI);
 
+    bool HasScheme(void) const;
     std::string GetScheme(void) const;
     std::string GetUsername(void) const;
     std::string GetPassword(void) const;
