@@ -50,6 +50,9 @@
     <ClCompile Include="..\..\src\files\file_win.cpp">
       <Filter>Source Files\files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\strings\string_utils.cpp">
+      <Filter>Source Files\strings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\_pc.h">
@@ -75,6 +78,15 @@
     </ClInclude>
     <ClInclude Include="..\..\sdk\include\files\zk_file.h">
       <Filter>Header Files\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\strings\zk_string_utils.h">
+      <Filter>Header Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\strings\string_utils_impl.hpp">
+      <Filter>Source Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\strings\zk_string_piece.hpp">
+      <Filter>Header Files\strings</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
