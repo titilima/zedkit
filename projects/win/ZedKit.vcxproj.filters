@@ -56,6 +56,9 @@
     <ClCompile Include="..\..\src\strings\string_split.cpp">
       <Filter>Source Files\strings</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\net\uri.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\_pc.h">
@@ -99,6 +102,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\strings\trim_impl.hpp">
       <Filter>Source Files\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\net\zk_uri.h">
+      <Filter>Header Files\net</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

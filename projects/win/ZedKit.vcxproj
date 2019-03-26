@@ -167,6 +167,7 @@
     <ClCompile Include="..\..\src\files\file_win.cpp" />
     <ClCompile Include="..\..\src\log_win.cpp" />
     <ClCompile Include="..\..\src\net\http_constants.cpp" />
+    <ClCompile Include="..\..\src\net\uri.cpp" />
     <ClCompile Include="..\..\src\strings\string_conversions_win.cpp" />
     <ClCompile Include="..\..\src\strings\string_format.cpp" />
     <ClCompile Include="..\..\src\strings\string_split.cpp" />
@@ -180,6 +181,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\sdk\include\files\zk_file.h" />
     <ClInclude Include="..\..\sdk\include\net\zk_http_constants.h" />
+    <ClInclude Include="..\..\sdk\include\net\zk_uri.h" />
     <ClInclude Include="..\..\sdk\include\strings\zk_string_conversions.h" />
     <ClInclude Include="..\..\sdk\include\strings\zk_string_format.h" />
     <ClInclude Include="..\..\sdk\include\strings\zk_string_piece.hpp" />
