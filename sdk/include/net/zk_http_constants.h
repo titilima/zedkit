@@ -16,10 +16,20 @@
 
 namespace ZedKit {
 
+struct ZkHTTPStatusCode {
+    enum {
+        OK = 200,
+        NotModified = 304,
+        NotFound = 404
+    };
+};
+
 namespace HTTPHeaders {
 extern const char AcceptEncoding[];
 extern const char AcceptLanguage[];
 extern const char Cookie[];
+extern const char ETag[];
+extern const char IfNoneMatch[];
 extern const char Referer[];
 extern const char UserAgent[];
 } // HTTPHeaders

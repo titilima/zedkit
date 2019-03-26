@@ -17,6 +17,8 @@ namespace HTTPHeaders {
 const char AcceptEncoding[] = "Accept-Encoding";
 const char AcceptLanguage[] = "Accept-Language";
 const char Cookie[] = "Cookie";
+const char ETag[] = "ETag";
+const char IfNoneMatch[] = "IfNoneMatch";
 const char Referer[] = "Referer";
 const char UserAgent[] = "User-Agent";
 } // HTTPHeaders
