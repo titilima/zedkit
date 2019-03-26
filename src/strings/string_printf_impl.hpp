@@ -9,8 +9,8 @@
 // Copyright (C) 2019 MingYang Software Technology.
 // -------------------------------------------------
 
-#ifndef ZEDKIT_STRING_PRINTF_IMPL_HPP
-#define ZEDKIT_STRING_PRINTF_IMPL_HPP
+#ifndef _STRING_PRINTF_IMPL_HPP
+#define _STRING_PRINTF_IMPL_HPP
 
 #pragma once
 
@@ -69,4 +69,4 @@ std::basic_string<CharT> StringPrintfImpl(const CharT *format, va_list args)
 
 } // namespace ZedKit
 
-#endif // ZEDKIT_STRING_PRINTF_IMPL_HPP
+#endif // _STRING_PRINTF_IMPL_HPP
