@@ -36,6 +36,7 @@ public:
 
     const CharT* Data(void) const { return m_data; }
     size_t Length(void) const { return m_length; }
+    bool IsEmpty(void) const { return 0 == m_length; }
 
     std::basic_string<CharT> ToString(void) const { return std::basic_string<CharT>(m_data, m_length); }
 #ifdef _ZK_STRING_VIEW_SUPPORTED
