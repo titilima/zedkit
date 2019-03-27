@@ -19,6 +19,12 @@
 
 namespace ZedKit {
 
+int ZkStringCompareIgnoreCase(const ZkStringPiece<char> &s1, const char *s2);
+#ifndef _ZK_WIDE_IS_UTF16
+int ZkStringCompareIgnoreCase(const ZkStringPiece<char16_t> &s1, const char16_t *s2);
+#endif
+int ZkStringCompareIgnoreCase(const ZkStringPiece<wchar_t> &s1, const wchar_t *s2);
+
 template <class CharT>
 inline bool ZkStringIsNullOrEmpty(const CharT *s) {
     return nullptr == s || '\0' == *s;

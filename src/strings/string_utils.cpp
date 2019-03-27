@@ -11,10 +11,30 @@
 
 #include "strings/zk_string_utils.h"
 
+#include "strings/compare_impl.hpp"
 #include "strings/toggle_case_impl.hpp"
 #include "strings/trim_impl.hpp"
 
 namespace ZedKit {
+
+int ZkStringCompareIgnoreCase(const ZkStringPiece<char> &s1, const char *s2)
+{
+    return CompareIgnoreCase(s1, s2);
+}
+
+#ifndef _ZK_WIDE_IS_UTF16
+
+int ZkStringCompareIgnoreCase(const ZkStringPiece<char16_t> &s1, const char16_t *s2)
+{
+    return CompareIgnoreCase(s1, s2);
+}
+
+#endif
+
+int ZkStringCompareIgnoreCase(const ZkStringPiece<wchar_t> &s1, const wchar_t *s2)
+{
+    return CompareIgnoreCase(s1, s2);
+}
 
 std::string ZkStringToASCIILower(const char *s)
 {
