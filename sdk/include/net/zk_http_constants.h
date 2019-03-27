@@ -20,6 +20,7 @@ struct ZkHTTPStatusCode {
     enum {
         OK = 200,
         NotModified = 304,
+        Forbidden = 403,
         NotFound = 404
     };
 };
