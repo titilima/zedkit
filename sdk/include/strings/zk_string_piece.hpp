@@ -55,6 +55,11 @@ private:
     const size_t m_length;
 };
 
+template <typename CharT>
+inline ZkStringPiece<CharT> ZkToStringPiece(const CharT *psz) {
+    return ZkStringPiece<CharT>(psz);
+}
+
 } // namespace ZedKit
 
 #endif // ZEDKIT_STRING_PIECE_HPP
