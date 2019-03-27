@@ -29,7 +29,8 @@ static DataType ReadContentImpl(ZkFile::PathCStr filePath, bool *succeeded)
         size_t read = file.Read(const_cast<void *>(dst), cb);
         assert(read == cb);
 
-        *succeeded = true;
+        if (nullptr != succeeded)
+            *succeeded = true;
     }
     else if (nullptr != succeeded)
     {
