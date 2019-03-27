@@ -112,7 +112,9 @@ static void AppendEncoded(std::string &s, char ch)
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'
     };
 
-    if (isalnum(ch) || nullptr != strchr(SpecialChars, ch))
+    if (('0' <= ch && ch <= '9')
+        || ('a' <= ch && ch <= 'z') || ('A' <= ch && ch <= 'Z')
+        || nullptr != strchr(SpecialChars, ch))
     {
         s.push_back(ch);
     }
