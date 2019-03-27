@@ -34,6 +34,25 @@ inline std::string ZkURLDecode(const StringType &s) {
     return ZkURLDecode(s.data(), s.length());
 }
 
+class ZkQueryCodec
+{
+public:
+    template <class ContainerType>
+    static std::string Encode(const ContainerType &queryData) {
+        std::string ret;
+        for (const auto &pair : queryData)
+        {
+            ret.append(pair.first);
+            ret.push_back('=');
+            ret.append(ZkURLEncode(pair.second));
+            ret.push_back('&');
+        }
+        if (!ret.empty())
+            ret.pop_back();
+        return ret;
+    }
+};
+
 } // namespace ZedKit
 
 #endif // ZEDKIT_HTTP_CODECS_H
