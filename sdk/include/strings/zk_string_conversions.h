@@ -23,15 +23,15 @@ namespace ZedKit {
 
 #ifdef _WIN32
 
-std::wstring ZkMultiByteToWideString(PCSTR ps, size_t length, UINT codePage = CP_ACP);
+std::wstring ZkMultiByteToWideString(PCSTR ps, size_t length, UINT codePage);
 
-inline std::wstring ZkMultiByteToWideString(const ZkStringPiece<char> &s, UINT codePage = CP_ACP) {
+inline std::wstring ZkMultiByteToWideString(const ZkStringPiece<char> &s, UINT codePage) {
     return ZkMultiByteToWideString(s.Data(), s.Length(), codePage);
 }
 
-std::string ZkWideStringToMultiByte(PCWSTR pws, size_t length, UINT codePage = CP_ACP);
+std::string ZkWideStringToMultiByte(PCWSTR pws, size_t length, UINT codePage);
 
-inline std::string ZkWideStringToMultiByte(const ZkStringPiece<wchar_t> &s, UINT codePage = CP_ACP) {
+inline std::string ZkWideStringToMultiByte(const ZkStringPiece<wchar_t> &s, UINT codePage) {
     return ZkWideStringToMultiByte(s.Data(), s.Length(), codePage);
 }
 
