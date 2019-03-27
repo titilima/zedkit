@@ -30,9 +30,16 @@ std::vector<ZkStringPiece<wchar_t>> ZkSplitString(const wchar_t *s, const wchar_
 std::vector<ZkStringPiece<wchar_t>> ZkSplitString(const wchar_t *s, size_t length, const wchar_t *separator);
 
 template <typename CharT>
-inline std::vector<ZkStringPiece<CharT>> ZkSplitString(const ZkStringPiece<CharT> &s, const CharT *separator) {
-    return ZkSplitString(s.Data(), s.Length(), separator);
+inline std::vector<ZkStringPiece<CharT>> ZkSplitString(const std::basic_string<CharT> &s, const CharT *separator) {
+    return ZkSplitString(s.data(), s.length(), separator);
 }
+
+#ifdef _ZK_STRING_VIEW_SUPPORTED
+template <typename CharT>
+inline std::vector<ZkStringPiece<CharT>> ZkSplitString(const std::basic_string_view<CharT> &s, const CharT *separator) {
+    return ZkSplitString(s.data(), s.length(), separator);
+}
+#endif
 
 } // namespace ZedKit
 
