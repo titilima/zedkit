@@ -67,6 +67,12 @@ ZkStringPiece<char16_t> ZkTrimString(const char16_t *s, size_t length);
 ZkStringPiece<wchar_t> ZkTrimString(const wchar_t *s);
 ZkStringPiece<wchar_t> ZkTrimString(const wchar_t *s, size_t length);
 
+template <class CharT>
+inline void ZkTrimString(std::basic_string<CharT> &s) {
+    auto t = ZkTrimString(s.data(), s.length());
+    s.assign(t.Data(), t.Length());
+}
+
 } // namespace ZedKit
 
 #endif // ZEDKIT_STRING_UTILS_H
