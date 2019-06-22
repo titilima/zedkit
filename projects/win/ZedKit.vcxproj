@@ -243,6 +243,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\crypto\common_digest.cpp" />
     <ClCompile Include="..\..\src\crypto\md5_win.cpp" />
+    <ClCompile Include="..\..\src\crypto\stream_cryptor.cpp" />
     <ClCompile Include="..\..\src\files\file.cpp" />
     <ClCompile Include="..\..\src\files\file_win.cpp" />
     <ClCompile Include="..\..\src\log_win.cpp" />
@@ -265,6 +266,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sdk\include\crypto\zk_common_digest.h" />
+    <ClInclude Include="..\..\sdk\include\crypto\zk_stream_cryptor.h" />
     <ClInclude Include="..\..\sdk\include\files\zk_file.h" />
     <ClInclude Include="..\..\sdk\include\net\zk_cookie_entry.h" />
     <ClInclude Include="..\..\sdk\include\net\zk_http_codecs.h" />

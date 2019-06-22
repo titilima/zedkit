@@ -77,6 +77,9 @@
     <ClCompile Include="..\..\src\crypto\md5_win.cpp">
       <Filter>Source Files\crypto</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\crypto\stream_cryptor.cpp">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\_pc.h">
@@ -134,6 +137,9 @@
       <Filter>Header Files\net</Filter>
     </ClInclude>
     <ClInclude Include="..\..\sdk\include\crypto\zk_common_digest.h">
+      <Filter>Header Files\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\crypto\zk_stream_cryptor.h">
       <Filter>Header Files\crypto</Filter>
     </ClInclude>
   </ItemGroup>
