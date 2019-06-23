@@ -251,6 +251,7 @@
     <ClCompile Include="..\..\src\net\http_codecs.cpp" />
     <ClCompile Include="..\..\src\net\http_constants.cpp" />
     <ClCompile Include="..\..\src\net\uri.cpp" />
+    <ClCompile Include="..\..\src\process\arg_parser.cpp" />
     <ClCompile Include="..\..\src\strings\string_conversions_win.cpp" />
     <ClCompile Include="..\..\src\strings\string_format.cpp" />
     <ClCompile Include="..\..\src\strings\string_split.cpp" />
@@ -272,6 +273,7 @@
     <ClInclude Include="..\..\sdk\include\net\zk_http_codecs.h" />
     <ClInclude Include="..\..\sdk\include\net\zk_http_constants.h" />
     <ClInclude Include="..\..\sdk\include\net\zk_uri.h" />
+    <ClInclude Include="..\..\sdk\include\process\zk_arg_parser.h" />
     <ClInclude Include="..\..\sdk\include\strings\zk_string_conversions.h" />
     <ClInclude Include="..\..\sdk\include\strings\zk_string_format.h" />
     <ClInclude Include="..\..\sdk\include\strings\zk_string_piece.hpp" />

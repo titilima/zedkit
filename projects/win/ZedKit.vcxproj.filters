@@ -33,6 +33,12 @@
     <Filter Include="Source Files\crypto">
       <UniqueIdentifier>{0dbec82b-4c5b-4455-bc87-e263815d5392}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\process">
+      <UniqueIdentifier>{5d2b242b-7c58-47be-8aaa-a915e59b58cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\process">
+      <UniqueIdentifier>{d71ee956-022c-4211-8802-3852a023bdfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="_pch.cpp">
@@ -79,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\crypto\stream_cryptor.cpp">
       <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\process\arg_parser.cpp">
+      <Filter>Source Files\process</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +150,9 @@
     </ClInclude>
     <ClInclude Include="..\..\sdk\include\crypto\zk_stream_cryptor.h">
       <Filter>Header Files\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\process\zk_arg_parser.h">
+      <Filter>Header Files\process</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
