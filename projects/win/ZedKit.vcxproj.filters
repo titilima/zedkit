@@ -89,6 +89,9 @@
     <ClCompile Include="..\..\src\process\arg_parser.cpp">
       <Filter>Source Files\process</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\files\sys_path_win.cpp">
+      <Filter>Source Files\files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\_pc.h">
@@ -153,6 +156,9 @@
     </ClInclude>
     <ClInclude Include="..\..\sdk\include\process\zk_arg_parser.h">
       <Filter>Header Files\process</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\include\files\zk_sys_path.h">
+      <Filter>Header Files\files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

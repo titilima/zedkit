@@ -246,6 +246,7 @@
     <ClCompile Include="..\..\src\crypto\stream_cryptor.cpp" />
     <ClCompile Include="..\..\src\files\file.cpp" />
     <ClCompile Include="..\..\src\files\file_win.cpp" />
+    <ClCompile Include="..\..\src\files\sys_path_win.cpp" />
     <ClCompile Include="..\..\src\log_win.cpp" />
     <ClCompile Include="..\..\src\net\cookie_entry.cpp" />
     <ClCompile Include="..\..\src\net\http_codecs.cpp" />
@@ -269,6 +270,7 @@
     <ClInclude Include="..\..\sdk\include\crypto\zk_common_digest.h" />
     <ClInclude Include="..\..\sdk\include\crypto\zk_stream_cryptor.h" />
     <ClInclude Include="..\..\sdk\include\files\zk_file.h" />
+    <ClInclude Include="..\..\sdk\include\files\zk_sys_path.h" />
     <ClInclude Include="..\..\sdk\include\net\zk_cookie_entry.h" />
     <ClInclude Include="..\..\sdk\include\net\zk_http_codecs.h" />
     <ClInclude Include="..\..\sdk\include\net\zk_http_constants.h" />
