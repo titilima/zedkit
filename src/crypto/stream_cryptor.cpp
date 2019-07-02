@@ -30,7 +30,7 @@ ZkStreamCryptor::ZkStreamCryptor(void)
     , m_Rot1_B(0xC0000000)
     , m_Rot1_C(0xF0000000)
 {
-    // Nothing
+    SetKey(std::string());
 }
 
 void ZkStreamCryptor::PrepareTransforming(void)
