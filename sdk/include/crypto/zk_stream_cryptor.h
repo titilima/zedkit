@@ -38,9 +38,10 @@ public:
     static std::string Transform(const std::string &s, const std::string &key = std::string());
     static void Transform(std::vector<unsigned char> *data, const std::string &key = std::string());
 private:
+    void PrepareTransforming(void);
     void TransformChar(unsigned char &target);
 private:
-    std::string     m_Key;
+    std::vector<unsigned char> m_seed;
     uint32_t        m_LFSR_A;
     uint32_t        m_LFSR_B;
     uint32_t        m_LFSR_C;

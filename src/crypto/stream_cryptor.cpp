@@ -33,28 +33,15 @@ ZkStreamCryptor::ZkStreamCryptor(void)
     // Nothing
 }
 
-void ZkStreamCryptor::SetKey(const std::string &key)
+void ZkStreamCryptor::PrepareTransforming(void)
 {
-    int Index = 0;
-
-    m_Key = key;
-
-    // Set default key if none provided.
-    std::string Seed = m_Key;
-    if (Seed.empty())
-        Seed = "Default Seed";
-
-    // Make sure seed is at least 12 bytes long . 
-    for (Index = 0; Seed.length() < 12; ++Index)
-        Seed += Seed[Index];
-
     // LFSR A, B, and C get the first, second, and
     // third four bytes of the seed, respectively.
-    for (Index = 0; Index < 4; ++Index)
+    for (int i = 0; i < 4; ++i)
     {
-        m_LFSR_A = ((m_LFSR_A <<= 8) | static_cast<uint32_t>(Seed[Index + 0]));
-        m_LFSR_B = ((m_LFSR_B <<= 8) | static_cast<uint32_t>(Seed[Index + 4]));
-        m_LFSR_C = ((m_LFSR_C <<= 8) | static_cast<uint32_t>(Seed[Index + 8]));
+        m_LFSR_A = ((m_LFSR_A <<= 8) | static_cast<uint32_t>(m_seed[i + 0]));
+        m_LFSR_B = ((m_LFSR_B <<= 8) | static_cast<uint32_t>(m_seed[i + 4]));
+        m_LFSR_C = ((m_LFSR_C <<= 8) | static_cast<uint32_t>(m_seed[i + 8]));
     }
 
     // If any LFSR contains 0x00000000, load a 
@@ -65,6 +52,24 @@ void ZkStreamCryptor::SetKey(const std::string &key)
         m_LFSR_B = 0x2468ACE0;
     if (0x00000000 == m_LFSR_C)
         m_LFSR_C = 0xFDB97531;
+}
+
+void ZkStreamCryptor::SetKey(const std::string &key)
+{
+    std::string seed(key);
+
+    // Set default key if none provided.
+    if (seed.empty())
+        seed = "Default Seed";
+
+    // Make sure seed is at least 12 bytes long . 
+    size_t l = seed.length();
+    if (l < 12)
+        seed.append(seed.substr(0, 12 - l));
+
+    m_seed.clear();
+    for (char ch : seed)
+        m_seed.push_back(ch);
 }
 
 void ZkStreamCryptor::TransformChar(unsigned char &target)
@@ -137,8 +142,7 @@ void ZkStreamCryptor::TransformChar(unsigned char &target)
 
 std::string ZkStreamCryptor::TransformString(const std::string &s)
 {
-    if (m_Key.empty())
-        SetKey(std::string());
+    PrepareTransforming();
 
     std::string ret;
     for (char ch : s)
@@ -160,6 +164,7 @@ void ZkStreamCryptor::Transform(std::vector<unsigned char> *data, const std::str
 {
     ZkStreamCryptor cryptor;
     cryptor.SetKey(key);
+    cryptor.PrepareTransforming();
     for (unsigned char &ch : *data)
         cryptor.TransformChar(ch);
 }
