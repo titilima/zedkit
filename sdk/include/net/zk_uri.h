@@ -28,6 +28,8 @@ public:
 
     bool HasScheme(void) const;
     std::string GetScheme(void) const;
+    bool SchemeIsHTTPOrHTTPS(void) const;
+
     std::string GetUsername(void) const;
     std::string GetPassword(void) const;
     std::string GetHost(void) const;

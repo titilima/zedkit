@@ -291,4 +291,17 @@ ZkURI ZkURI::Parse(const char *URI)
     return ret;
 }
 
+bool ZkURI::SchemeIsHTTPOrHTTPS(void) const
+{
+    const Part &part = m_parsed->scheme;
+    switch (part.length)
+    {
+        case 4:
+            return 0 == memcmp(m_spec.data() + part.start, "http", 4);
+        case 5:
+            return 0 == memcmp(m_spec.data() + part.start, "https", 5);
+    }
+    return false;
+}
+
 } // namespace ZedKit
