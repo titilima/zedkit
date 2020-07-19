@@ -47,7 +47,7 @@ std::basic_string<CharT> StringPrintfImpl(const CharT *format, va_list args)
 
     size_t size = InitialBufSize * 2;
 
-    std::basic_string<CharT> ret('\0', size);
+    std::basic_string<CharT> ret(size, '\0');
     while (size < MaximumBufSize)
     {
         va_copy(args2, args);
